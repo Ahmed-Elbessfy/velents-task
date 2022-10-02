@@ -65,6 +65,11 @@ a {
 }
 
 /* add book style  */
+h1 {
+  text-align: center;
+  color: #7e470d;
+  text-transform: uppercase;
+}
 form {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
