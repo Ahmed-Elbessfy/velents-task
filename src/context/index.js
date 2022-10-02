@@ -72,12 +72,20 @@ const bookState = {
 // initiate reducer
 const bookReducer = (state, action) => {
   switch (action.type) {
+    // delete book  mutation
     case "DELETE_BOOK":
       return {
         ...state,
         bookList: state.bookList.filter(
           (book) => book.id !== action.payload.id
         ),
+      };
+    // add book  mutation
+    case "ADD_BOOK":
+      console.log("mutatio n : ", action.payload);
+      return {
+        ...state,
+        bookList: [...state.bookList, action.payload.book],
       };
     default:
       return state;
@@ -96,11 +104,20 @@ export const BookProvider = ({ children }) => {
   const deleteBook = (id) => {
     dispatch({ type: "DELETE_BOOK", payload: { id: id } });
   };
+
+  // delete book
+  const addBook = (book) => {
+    console.log("function ", book);
+    dispatch({ type: "ADD_BOOK", payload: { book: book } });
+  };
+
   return (
     <BookContext.Provider
       value={{
         bookList: state.bookList,
         deleteBook,
+        addBook,
+        booksListLength: state.bookList.length,
       }}
     >
       {children}

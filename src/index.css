@@ -12,6 +12,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* book list styles  */
 .books_list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -61,4 +62,40 @@ a {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+}
+
+/* add book style  */
+form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 1rem;
+  margin: 1rem;
+}
+
+form label {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+  display: inline-block;
+  font-weight: bold;
+  color: #7e470d;
+}
+
+form input {
+  font-size: 1.2rem;
+  padding: 0.75rem;
+  width: 100%;
+  display: block;
+  color: #7e470d;
+}
+
+form .submitBtn {
+  grid-column: -1/1;
+}
+.submitBtn button {
+  width: 100%;
+  padding: 1rem 0.3rem;
+  font-size: 1.3em;
+  background-color: #7e470d;
+  color: #fbe2c8;
+  border: none;
 }
