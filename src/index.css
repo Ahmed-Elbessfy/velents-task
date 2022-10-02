@@ -11,3 +11,53 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.books_list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-rows: 10rem;
+  grid-gap: 2rem;
+  margin: 1rem;
+}
+
+.book {
+  height: 100%;
+  padding: 0.7rem;
+  border: 5px outset #7e470d;
+  background: #fbe2c8;
+  text-align: center;
+  position: relative;
+}
+
+.book h1 {
+  margin-bottom: 5px;
+}
+
+.book p {
+  font-weight: 600;
+  color: #868686;
+  margin-bottom: 15px;
+}
+
+a {
+  padding: 0.5rem;
+  text-decoration: none;
+  background-color: #7e470d;
+  color: #fbe2c8;
+}
+
+.delete {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 30px;
+  height: 30px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
