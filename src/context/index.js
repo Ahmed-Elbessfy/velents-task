@@ -71,7 +71,17 @@ const bookState = {
 
 // initiate reducer
 const bookReducer = (state, action) => {
-  return state;
+  switch (action.type) {
+    case "DELETE_BOOK":
+      return {
+        ...state,
+        bookList: state.bookList.filter(
+          (book) => book.id !== action.payload.id
+        ),
+      };
+    default:
+      return state;
+  }
 };
 
 // initiate context
@@ -82,10 +92,15 @@ export const BookProvider = ({ children }) => {
   // use reducer
   const [state, dispatch] = useReducer(bookReducer, bookState);
 
+  // delete book
+  const deleteBook = (id) => {
+    dispatch({ type: "DELETE_BOOK", payload: { id: id } });
+  };
   return (
     <BookContext.Provider
       value={{
         bookList: state.bookList,
+        deleteBook,
       }}
     >
       {children}
